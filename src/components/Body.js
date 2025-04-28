@@ -26,7 +26,7 @@ const Body = () => {
       element: <SignUp />,
     },
     {
-      path: "*",
+      path: "/errorpage",
       element: <ErrorPage />,
     },
   ]);

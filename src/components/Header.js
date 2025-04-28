@@ -1,13 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
+import Netflixlogo from "./Netflixlogo";
+import { auth } from "../utils/firebase";
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { addUser, removeUser } from "../utils/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        const { uid, email, displayName } = user;
+        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
+        navigate("/browse");
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+    //unsubcribes when component unmounts
+    return () => unsubscribe();
+  }, [dispatch, navigate]);
+
   return (
     <div className="absolute z-10 px-8 py-4 bg-gradient-to-b from-black">
-      <img
-        className="w-44 contrast-125 "
-        src="https://help.nflxext.com/helpcenter/OneTrust/oneTrust_production/consent/87b6a5c0-0104-4e96-a291-092c11350111/01938dc4-59b3-7bbc-b635-c4131030e85f/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-        alt="Netflix Logo"
-      />
+      <Netflixlogo />
     </div>
   );
 };
