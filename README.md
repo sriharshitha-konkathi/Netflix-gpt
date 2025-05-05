@@ -28,6 +28,7 @@
   -Fetch Data for trailer video
   -updata store with the trailer video data
   -Embeded the youtube video and make it autoplay &mute
+  -Building the secondary container
 
   # Features
   -Login/Sign Up Page
