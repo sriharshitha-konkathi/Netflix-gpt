@@ -29,6 +29,11 @@
   -updata store with the trailer video data
   -Embeded the youtube video and make it autoplay &mute
   -Building the secondary container
+  -Bulid movie list
+  -bulid movie card
+  -Tmdb Img_CDN_URl
+  -created custom hooks of popular ,top rated,trending, upcoming
+  -GPT search Feature
 
   # Features
   -Login/Sign Up Page

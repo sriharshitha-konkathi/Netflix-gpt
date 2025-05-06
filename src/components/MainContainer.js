@@ -9,12 +9,12 @@ const MainContainer = () => {
   if (movies === null) return;
 
   const mainMovies = movies[0];
-  console.log(mainMovies);
+  //console.log(mainMovies);
 
   const { original_title, overview, id } = mainMovies;
 
   return (
-    <div className="relative">
+    <div className="relative hide-scrollbar">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBg movieId={id} />
     </div>
