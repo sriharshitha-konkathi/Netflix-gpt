@@ -1,6 +1,8 @@
 
 # Netflix-gpt
 
+**Live Demo:** [https://netflixgpt-2a16c.web.app/](https://netflixgpt-2a16c.web.app/)
+
   -Create-react-app
   -Configured Tailwindcss 
   -Header
