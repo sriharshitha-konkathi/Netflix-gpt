@@ -1,32 +1,34 @@
 // Create generic lists to map onto multiple items so it looks like a real database
+// We use picsum /seed/ to guarantee an image is always returned instead of /id/ which can 404.
+
 const baseMovies1 = Array.from({ length: 15 }, (_, i) => ({
   id: 1000 + i,
   title: `Action Movie ${i + 1}`,
-  poster_path: `https://picsum.photos/id/${10 + i}/200/300`,
+  poster_path: `https://picsum.photos/seed/action${i}/200/300`,
 }));
 
 const baseMovies2 = Array.from({ length: 15 }, (_, i) => ({
   id: 2000 + i,
   title: `Comedy Highlight ${i + 1}`,
-  poster_path: `https://picsum.photos/id/${30 + i}/200/300`,
+  poster_path: `https://picsum.photos/seed/comedy${i}/200/300`,
 }));
 
 const baseMovies3 = Array.from({ length: 15 }, (_, i) => ({
   id: 3000 + i,
   title: `Sci-Fi Thriller ${i + 1}`,
-  poster_path: `https://picsum.photos/id/${50 + i}/200/300`,
+  poster_path: `https://picsum.photos/seed/scifi${i}/200/300`,
 }));
 
 const baseMovies4 = Array.from({ length: 15 }, (_, i) => ({
   id: 4000 + i,
   title: `Drama Hit ${i + 1}`,
-  poster_path: `https://picsum.photos/id/${70 + i}/200/300`,
+  poster_path: `https://picsum.photos/seed/drama${i}/200/300`,
 }));
 
 const baseMovies5 = Array.from({ length: 15 }, (_, i) => ({
   id: 5000 + i,
   title: `Upcoming Gem ${i + 1}`,
-  poster_path: `https://picsum.photos/id/${90 + i}/200/300`,
+  poster_path: `https://picsum.photos/seed/upcoming${i}/200/300`,
 }));
 
 // We need ONE valid element as the very first list item for the MainContainer
