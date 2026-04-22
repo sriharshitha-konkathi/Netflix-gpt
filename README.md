@@ -1,7 +1,7 @@
 
 # Netflix-gpt
 
-**Live Demo:** [https://netflix-gpt-kappa-three.vercel.app/](https://netflix-gpt-kappa-three.vercel.app/)
+**Live Demo:** [https://my-stream-gpt.vercel.app/](https://my-stream-gpt.vercel.app/)
 
   -Create-react-app
   -Configured Tailwindcss 
