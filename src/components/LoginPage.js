@@ -8,9 +8,8 @@ const LoginPage = () => {
   return (
     <div>
       <Header />
-      <div className="absolute -z-10">
-        <img src={BG_LOGO} alt="bg Logo" />
-
+      <div className="absolute inset-0 -z-10">
+        <img src={BG_LOGO} alt="bg Logo" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div>
       <LoginForm />

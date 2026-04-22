@@ -38,10 +38,11 @@ const SignUp = () => {
 
   return (
     <div>
-      <div className="absolute -z-10">
+      <div className="absolute inset-0 -z-10">
         <img
           src="https://media.geeksforgeeks.org/wp-content/uploads/20240313102506/NetlfixHome-min.jpeg"
           alt="bg Logo"
+          className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black opacity-75"></div>
       </div>

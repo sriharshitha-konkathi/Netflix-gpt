@@ -27,7 +27,7 @@ const HeadBrowse = () => {
   };
 
   return (
-    <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 bg-gradient-to-b from-black z-10 ">
+    <div className="absolute top-0 left-0 w-full flex justify-between items-center p-4 bg-gradient-to-b from-black z-50 ">
       {/* LEFT PART - Logo + Navbar */}
       <div className="flex  items-center gap-6 ">
         <Netflixlogo />

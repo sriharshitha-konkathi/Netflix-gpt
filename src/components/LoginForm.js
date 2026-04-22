@@ -6,7 +6,6 @@ import { addUser } from "../utils/userSlice";
 const LoginForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -25,7 +24,7 @@ const LoginForm = () => {
     dispatch(addUser({
         uid: "dummy-local-user-" + Date.now(),
         email: email.current.value,
-        displayName: name.current?.value || "Test User",
+        displayName: "Test User",
     }));
     navigate("/browse");
   };
@@ -37,12 +36,6 @@ const LoginForm = () => {
         onSubmit={(e) => e.preventDefault()}
         className="flex flex-col space-y-4"
       >
-        <input
-          ref={name}
-          type="text"
-          placeholder="Full Name"
-          className="p-2 rounded bg-gray-700 placeholder-gray-400"
-        />
         <input
           ref={email}
           type="text"
