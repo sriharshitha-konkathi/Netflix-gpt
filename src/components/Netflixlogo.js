@@ -1,10 +1,9 @@
 import React from "react";
-import { LOGO } from "../utils/constants";
 
 const Netflixlogo = () => {
   return (
-    <div>
-      <img className="w-44 contrast-125 " src={LOGO} alt="netflix logo" />
+    <div className="w-44 flex items-center mb-0 mt-5 ml-4 ">
+      <h1 className="text-red-600 text-4xl font-extrabold tracking-widest drop-shadow-lg cursor-default">STREAMGPT</h1>
     </div>
   );
 };
