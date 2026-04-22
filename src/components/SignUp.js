@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
   const [error, setError] = useState("");
@@ -26,13 +27,13 @@ const SignUp = () => {
       return;
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        navigate("/login");
-      })
-      .catch((err) => {
-        setError(err.code + " - " + err.message);
-      });
+    // Bypass Firebase completely
+    dispatch(addUser({
+        uid: "dummy-local-user-" + Date.now(),
+        email: email,
+        displayName: "New User",
+    }));
+    navigate("/browse");
   };
 
   return (

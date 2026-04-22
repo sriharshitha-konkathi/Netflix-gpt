@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkValidateData } from "../utils/Validate";
-import { signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../utils/firebase";
-
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 const LoginForm = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const name = useRef(null);
   const email = useRef(null);
   const password = useRef(null);
@@ -21,23 +21,13 @@ const LoginForm = () => {
     setErrorMessage(message);
     if (message) return;
 
-    signInWithEmailAndPassword(
-      auth,
-      email.current.value,
-      password.current.value
-    )
-      .then((userCredential) => {
-        const user = userCredential.user;
-        updateProfile(user, {
-          displayName: name.current.value,
-          photoURL: "https://example.com/jane-q-user/profile.jpg",
-        })
-          .then(() => {})
-          .catch((error) => setErrorMessage(error.message));
-      })
-      .catch((error) => {
-        setErrorMessage(`${error.code} - ${error.message}`);
-      });
+    // Directly dispatch user to Redux and navigate to browse bypassing Firebase
+    dispatch(addUser({
+        uid: "dummy-local-user-" + Date.now(),
+        email: email.current.value,
+        displayName: name.current?.value || "Test User",
+    }));
+    navigate("/browse");
   };
 
   return (

@@ -1,9 +1,7 @@
 import React from "react";
-import { signOut } from "firebase/auth";
-import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../utils/userSlice";
+import { removeUser } from "../utils/userSlice";
 import Netflixlogo from "./Netflixlogo";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { SUPPORTED_LANGUAGES } from "../utils/constants";
@@ -15,18 +13,8 @@ const HeadBrowse = () => {
   const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   const handleSignOut = () => {
-    const user = auth.currentUser;
-    signOut(auth)
-      .then(() => {
-        const { uid, email, displayName } = user;
-        dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
-
-        navigate("/");
-      })
-      .catch((error) => {
-        // An error happened.
-        navigate("/errorpage");
-      });
+    dispatch(removeUser());
+    navigate("/");
   };
 
   const handleGptSearch = () => {
