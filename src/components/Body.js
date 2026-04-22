@@ -1,12 +1,12 @@
 import React from "react";
 import LoginPage from "./LoginPage";
 import Browse from "./Browse";
-import { createHashRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import SignUp from "./SignUp";
 
 const Body = () => {
-  const appRouter = createHashRouter([
+  const appRouter = createBrowserRouter([
     {
       path: "/",
       element: <LoginPage />,
