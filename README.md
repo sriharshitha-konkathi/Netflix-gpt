@@ -1,7 +1,7 @@
 
 # Netflix-gpt
 
-**Live Demo:** [https://sriharshitha-konkathi.github.io/Netflix-gpt](https://sriharshitha-konkathi.github.io/Netflix-gpt)
+**Live Demo:** [https://netflix-gpt-kappa-three.vercel.app/](https://netflix-gpt-kappa-three.vercel.app/)
 
   -Create-react-app
   -Configured Tailwindcss 
