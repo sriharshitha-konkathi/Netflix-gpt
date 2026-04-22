@@ -1,5 +1,5 @@
 export const LOGO =
-  "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/300px-Netflix_2015_logo.svg.png";
+  "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
 
 export const BG_LOGO =
   "https://media.geeksforgeeks.org/wp-content/uploads/20240313102506/NetlfixHome-min.jpeg";
